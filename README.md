@@ -1,5 +1,7 @@
 # npm-git-info
 
+[![Build Status](https://travis-ci.org/tricknotes/npm-git-info.svg?branch=master)](https://travis-ci.org/tricknotes/npm-git-info)
+
 Retrieves git information from package that installed as NPM package.
 
 ## Usage
