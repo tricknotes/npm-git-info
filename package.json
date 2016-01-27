@@ -1,7 +1,7 @@
 {
   "name": "npm-git-info",
   "version": "0.0.0",
-  "description": "Get a info from NPM's package.json",
+  "description": "Retrieves git information from package that installed as NPM package.",
   "main": "index.js",
   "scripts": {
     "test": "mocha && jshint index.js test/*.js"
