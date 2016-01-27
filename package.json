@@ -1,0 +1,23 @@
+{
+  "name": "npm-git-info",
+  "version": "0.0.0",
+  "description": "Get a info from NPM's package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tricknotes/npm-git-info.git"
+  },
+  "keywords": [
+    "npm",
+    "package.json"
+  ],
+  "author": "Ryunosuke SATO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tricknotes/npm-git-info/issues"
+  },
+  "homepage": "https://github.com/tricknotes/npm-git-info#readme"
+}
