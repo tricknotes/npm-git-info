@@ -14,7 +14,24 @@ module.exports = function npmGitInfo(package) {
   info.version = package.version;
   info.sha = package.gitHead;
   info.abbreviatedSha = package.gitHead && package.gitHead.slice(0, 10);
-  info.ref = (package._from || '').split('#')[1];
+
+  var requested = package._requested;
+  var type = requested && requested.type;
+
+  switch (type) {
+    case 'version':
+      info.ref = requested.spec;
+      break;
+
+    case 'tag':
+      info.ref = package.version;
+      break;
+
+    default:
+      info.ref = (package._from || '').split('#')[1];
+      break;
+
+  }
 
   return info;
 };
