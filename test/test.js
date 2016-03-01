@@ -65,4 +65,36 @@ describe('npm-git-info', function() {
     expect(subject.isInstalledAsNpmPackage()).to.be(false);
     expect(subject.hasVersionInRef()).to.be(false);
   });
+
+  it('should detect info from NPM installed package with version', function() {
+    // this tests the result of: npm install ember-data@2.4.0
+    var subject = info(fixture('npm-version.json'));
+
+    expect(subject).to.eql({
+      name: 'ember-data',
+      version: '2.4.0',
+      sha: '9f8c40927a5e8a7966c251d99eb26c3f1fb0606e',
+      abbreviatedSha: '9f8c40927a',
+      ref: '2.4.0'
+    });
+
+    expect(subject.isInstalledAsNpmPackage()).to.be(true);
+    expect(subject.hasVersionInRef()).to.be(true);
+  });
+
+  it('should detect info from NPM installed package without a version', function() {
+    // this tests the result of: npm install ember-data
+    var subject = info(fixture('npm-without-version.json'));
+
+    expect(subject).to.eql({
+      name: 'ember-data',
+      version: '2.4.0',
+      sha: '9f8c40927a5e8a7966c251d99eb26c3f1fb0606e',
+      abbreviatedSha: '9f8c40927a',
+      ref: '2.4.0'
+    });
+
+    expect(subject.isInstalledAsNpmPackage()).to.be(true);
+    expect(subject.hasVersionInRef()).to.be(true);
+  });
 });
