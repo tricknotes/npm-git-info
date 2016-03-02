@@ -1,6 +1,6 @@
 {
   "name": "npm-git-info",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Retrieves git information from package that installed as NPM package.",
   "main": "index.js",
   "scripts": {
