@@ -18,12 +18,19 @@ module.exports = function npmGitInfo(package) {
   var requested = package._requested;
   var type = requested && requested.type;
 
+  // if there is a package._id property but no package._requested, this means
+  // that the dependency is installed via npm2
+  if (package._id && !requested) {
+    type = 'npm2';
+  }
+
   switch (type) {
     case 'version':
       info.ref = requested.spec;
       break;
 
     case 'tag':
+    case 'npm2':
       info.ref = package.version;
       break;
 
