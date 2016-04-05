@@ -113,4 +113,20 @@ describe('npm-git-info', function() {
     expect(subject.isInstalledAsNpmPackage()).to.be(true);
     expect(subject.hasVersionInRef()).to.be(true);
   });
+
+  it('should detect info from NPM installed package with a range', function() {
+    // this tests the result of: npm install ember-data@^2.4.3
+    var subject = info(fixture('range.json'));
+
+    expect(subject).to.eql({
+      name: 'ember-data',
+      version: '2.4.3',
+      sha: 'a3e2521f85c91f18dd455f316572068566ff1a3b',
+      abbreviatedSha: 'a3e2521f85',
+      ref: '2.4.3'
+    });
+
+    expect(subject.isInstalledAsNpmPackage()).to.be(true);
+    expect(subject.hasVersionInRef()).to.be(true);
+  });
 });

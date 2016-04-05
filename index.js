@@ -29,6 +29,7 @@ module.exports = function npmGitInfo(package) {
       info.ref = requested.spec;
       break;
 
+    case 'range':
     case 'tag':
     case 'npm2':
       info.ref = package.version;
