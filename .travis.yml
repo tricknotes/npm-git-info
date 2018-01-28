@@ -1,12 +1,18 @@
 language: node_js
 sudo: false
 node_js:
-  - 0.12
   - 4
   - 6
+  - 8
 before_install:
   - npm install -g npm@$NPM_VERSION
 env:
   - NPM_VERSION=1
   - NPM_VERSION=2
   - NPM_VERSION=3
+  - NPM_VERSION=4
+  - NPM_VERSION=5
+matrix:
+  exclude:
+    - node_js: 8
+    - env: NPM_VERSION=1 # Due to unsupported by Node.js 8
