@@ -10,6 +10,8 @@ env:
   - NPM_VERSION=1
   - NPM_VERSION=2
   - NPM_VERSION=3
+  - NPM_VERSION=4
+  - NPM_VERSION=5
 matrix:
   exclude:
     - node_js: 8
