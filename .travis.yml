@@ -4,6 +4,9 @@ node_js:
   - 4
   - 6
   - 8
+  - 9
+  - 10
+  - 11
 before_install:
   - npm install -g npm@$NPM_VERSION
 env:
@@ -14,5 +17,12 @@ env:
   - NPM_VERSION=5
 matrix:
   exclude:
+    # Due to unsupported by Node.js 8 or later
     - node_js: 8
-    - env: NPM_VERSION=1 # Due to unsupported by Node.js 8
+      env: NPM_VERSION=1
+    - node_js: 9
+      env: NPM_VERSION=1
+    - node_js: 10
+      env: NPM_VERSION=1
+    - node_js: 11
+      env: NPM_VERSION=1
