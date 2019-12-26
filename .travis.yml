@@ -7,6 +7,8 @@ node_js:
   - 9
   - 10
   - 11
+  - 12
+  - 13
 before_install:
   - npm install -g npm@$NPM_VERSION
 env:
@@ -25,4 +27,8 @@ matrix:
     - node_js: 10
       env: NPM_VERSION=1
     - node_js: 11
+      env: NPM_VERSION=1
+    - node_js: 12
+      env: NPM_VERSION=1
+    - node_js: 13
       env: NPM_VERSION=1
