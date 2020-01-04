@@ -1,0 +1,32 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 9.x, 10.x, 11.x, 12.x, 13.x]
+        npm-version: [2, 3, 4, 5, 6]
+        exclude:
+          - node-version: 8.x
+            npm-version: 6
+          - node-version: 9.x
+            npm-version: 6
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build
+        run: |
+          npm install -g npm@${{ matrix.npm-version }}
+          npm install
+      - name: npm test
+        run: |
+          npm test
