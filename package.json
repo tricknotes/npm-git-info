@@ -22,8 +22,8 @@
   "homepage": "https://github.com/tricknotes/npm-git-info#readme",
   "devDependencies": {
     "expect.js": "^0.3.1",
-    "jshint": "^2.9.1",
-    "mocha": "^5.0.0"
+    "jshint": "^2.11.1",
+    "mocha": "^8.0.1"
   },
   "directories": {
     "test": "test"
