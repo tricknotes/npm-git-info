@@ -1,6 +1,6 @@
 # npm-git-info
 
-[![Build Status](https://travis-ci.org/tricknotes/npm-git-info.svg?branch=main)](https://travis-ci.org/tricknotes/npm-git-info)
+[![Build Status](https://github.com/tricknotes/npm-git-info/workflows/Node%20CI/badge.svg)](https://github.com/tricknotes/npm-git-info/actions?query=workflow%3A%22Node+CI%22)
 
 Retrieves git information from package that installed as NPM package.
 
