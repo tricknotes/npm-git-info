@@ -31,6 +31,10 @@ jobs:
             npm-version: 7
           - node-version: 15.x
             npm-version: 7
+          - node-version: 16.x
+            npm-version: 7
+          - node-version: 17.x
+            npm-version: 7
 
     steps:
       - uses: actions/checkout@v2
